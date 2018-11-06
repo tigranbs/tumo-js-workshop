@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EURO exchange API</title>
+</head>
+<body>
+
+<form id="currencyForm">
+    <p>
+        <label>Currency</label><br />
+        <select id="currencySelect" name="currency"></select>
+    </p>
+    <p>
+        <label>Amount</label><br />
+        <input min="0" type="number" name="amount" value="" placeholder="amount" />
+    </p>
+    <p>
+        <button type="submit">Get Rate</button>
+    </p>
+</form>
+<h4 id="rateAmount"></h4>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
