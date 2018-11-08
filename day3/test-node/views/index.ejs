@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Test Page EJS</title>
+  </head>
+  <body>
+    <%= hakob %>
+    <h4 id="tarakan"></h4>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+      $(function () {
+        $.post('/exp', function (data) {
+          $('#tarakan').text(data.tarakan);
+        });
+      });
+    </script>
+  </body>
+</html>
