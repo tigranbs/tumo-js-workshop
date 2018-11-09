@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Test Page EJS</title>
+  </head>
+  <body>
+    <%= hakob %>
+    <form id="weatherForm">
+      <input name="location" placeholder="Location" />
+      <br />
+      <button type="submit">Get Temperature</button>
+    </form>
+    <h4 id="temperature"></h4>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+      $(function () {
+        $('#weatherForm').submit(() => {
+            const loc = $(this).find('input[name="location"]').val();
+            $.post('/exp', { location: loc }, function (data) {
+                $('#temperature').text(data.temperature);
+            });
+            return false;
+        });
+      });
+    </script>
+  </body>
+</html>
