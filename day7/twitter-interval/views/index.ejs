@@ -1,0 +1,73 @@
+<html>
+<head>
+  <title>TwitterAPI </title>
+  <style>
+  #main div{ 
+    width: 63%;
+      height: 200px;
+      border: 1px solid #38A1F3;
+      display: inline-block;
+      padding: 10px;
+      box-sizing: border-box;
+      margin: auto;
+      margin-left: 17%;
+      margin-bottom: 19px;
+      text-align: center;
+      margin-top: 10px;
+  }
+  input{
+    width: 300px;
+      height: 50px;
+      text-align: center;
+      font-size: 22px;
+      border: 2px solid #38A1F3;
+  }
+  input:focus { 
+    border: 2px solid #38A1F3;
+      outline: none;
+      border-color: #38A1F3;
+    
+  }
+  button{
+  width: 60px;
+      height: 49.5px;
+      position: relative;
+      top: -2px;
+      background-color: #38A1F3;
+      border: none;
+  }
+  #form{
+    width: 364px;
+    margin: auto;
+  }
+  </style>
+</head>
+<body>
+  <form id="form">
+    <input type="text" name="name" placeholder="search">
+    <button type="submit">Search</button>
+  </form>
+  <div id="main"></div>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script>
+  $(function () {
+    $('#form').submit(function () {
+      var a = $("#main").children();
+      if (a) {
+        a.remove();
+      }
+      let c = $('input').val();
+      $.post('/s', { k: c }, data => {
+        console.log(data.search)
+        for (var i in data.search) {
+          var x = data.search[i].text;
+          var y = data.search[i].user.name;
+          $('#main').append("<div><h1>" + y + "</h1>" + "<p>" + x + "</p>" + "</div>")
+        }
+      })
+      return false;
+    })
+  });
+  </script>
+</body>
+</html>
