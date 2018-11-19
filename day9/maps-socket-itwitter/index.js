@@ -1,9 +1,10 @@
 const express = require('express');
+const  app = express();
+const io = require('./socket')(app);
+
 const bodyParser = require('body-parser');
 const twit = require('./twitter');
 
-
-const  app = express();
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 const port = 3000;
@@ -13,12 +14,17 @@ app.get('/', (req, res) => {
     res.render('index', {});
 });
 
-app.post('/search', (req, res) => {
-    const lat = req.body.lat;
-    const lng = req.body.lng;
-    twit.search(`${lat},${lng}`, statuses => {
-        res.json({ search: statuses });
+io.on('connection', function (socket) {
+    socket.emit('accepted', { status: 'ok' });
+    socket.on('disconnect', function () {
+        console.log('Client disconnected');
+    });
+
+    socket.on('geocode', data => {
+        const lat = data.lat;
+        const lng = data.lng;
+        twit.search(`${lat},${lng}`);
     });
 });
 
-app.listen(port, () => console.log(`Twitter app listening on port ${port}!`));
+io.server.listen(port, () => console.log(`Twitter app listening on port ${port}!`));
