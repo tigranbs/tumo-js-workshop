@@ -1,0 +1,20 @@
+<html>
+<head>
+  <title>TwitterAPI </title>
+  <link rel="stylesheet" type="text/css" href="/styles.css" />
+</head>
+<body>
+  <div id="form">
+    <input id="pac-input" type="text" name="name" placeholder="search">
+    <button type="submit">Search</button>
+  </div>
+  <div id="main"></div>
+  <div id="map"></div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="/maps.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoIunpMrruPoHJm79WSjH7bPJlhhB7C-c&libraries=places&callback=initMap" async defer></script>
+  <script src="/twitter.js"></script>
+</body>
+</html>
