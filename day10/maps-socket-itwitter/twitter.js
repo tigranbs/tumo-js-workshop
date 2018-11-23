@@ -2,10 +2,10 @@ const Twit = require('twit');
 const io = require('./socket')();
 
 const T = new Twit({
-    consumer_key:         'BSOXczVHwbmAi6XWtQ5OAiuG0',
-    consumer_secret:      'fmRzZhYmtTock2ekoegt3ZnLy4ocxEAN8RnnOJMNox0VnbvZlw',
-    access_token:         '3003116730-cgV74NOk4HtNy47Tb6PHXY901wq9QxSHk7DlNmj',
-    access_token_secret:  'KAI1EukeujwicwyVTaciIiG7sWS2uOkypa8DzB8FXbqMQ',
+    consumer_key:         'PiNjRr8gy9ZdVLJFjd8KWrQ6F',
+    consumer_secret:      'O08HqjZfRXMXkHX9fBNY56fdqCPLlBAdHJZ8MtybV9gQhA086q',
+    access_token:         '3003116730-twUX4f0l0EUZQoB6PBprcdPBBGlrcKU7GFNyP8T',
+    access_token_secret:  'uXvZWQpFZqKsnd4Njvpw3tjL6snyAwMuatZMsyoFusNWi',
     timeout_ms:           60*1000,
     strictSSL:            true,
 });
