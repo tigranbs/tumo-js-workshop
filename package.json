@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "install": "cd day10/maps-socket-itwitter && npm install",
     "start": "cd day10/maps-socket-itwitter && npm start"
   },
   "author": "",
