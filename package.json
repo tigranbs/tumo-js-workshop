@@ -1,0 +1,11 @@
+{
+  "name": "tweterapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd day10/maps-socket-itwitter && npm start"
+  },
+  "author": "",
+  "license": "ISC"
+}
