@@ -55,7 +55,7 @@ setInterval(() => {
     searchTweet(queries[index], (tweets) => {
         console.log(tweets);
     });
-}, 2000 * 60);
+}, 1500 * 60);
 
 module.exports = {
     search(query) {
